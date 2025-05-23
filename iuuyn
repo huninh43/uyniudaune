@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>🔐 Quà tặng bí mật</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: white;
+      overflow: hidden;
+    }
+    .center-box {
+      position: absolute;
+      top: 40%;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+    }
+    input, button {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      border-radius: 5px;
+      border: none;
+      margin-top: 10px;
+    }
+    .chuc {
+      position: absolute;
+      top: 40%;
+      width: 100%;
+      text-align: center;
+      font-size: 1.6em;
+      color: #fff;
+      animation: fadeIn 2s ease-in-out;
+      z-index: 100;
+    }
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    canvas {
+      display: block;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 50;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas" style="display:none;"></canvas>
+
+<div class="center-box" id="unlockBox">
+  <h2>🔒 Nhập mật mã để mở phần thưởng</h2>
+  <input type="password" id="password" placeholder="Mật mã bí mật..." />
+  <br />
+  <button onclick="kiemTra()">MỞ QUÀ</button>
+  <p id="thongBao" style="color: red;"></p>
+</div>
+
+<div class="chuc" id="loiChuc" style="display:none;"></div>
+
+<script>
+  const MAT_KHAU_DUNG = "dothithuyuyen";  // Mật khẩu bạn đã cung cấp
+  const loiChucList = [
+    "🍜 Chúc mày ăn mì cay cấp độ 7 mà không rơi một giọt lệ!",
+    "🍢 Xiên bẩn là đỉnh cao, cũng như tình bạn tụi mình!",
+    "🍋 Một ly trà chanh, một tình bạn chanh sả kéo dài mãi mãi!",
+    "🔥 Tình bạn của tụi mình nóng như nồi lẩu xiên cay nồng!",
+    "🎉 Mật mã đúng rồi! Đây là phần thưởng dành cho bạn thân cực phẩm!"
+  ];
+
+  function kiemT
